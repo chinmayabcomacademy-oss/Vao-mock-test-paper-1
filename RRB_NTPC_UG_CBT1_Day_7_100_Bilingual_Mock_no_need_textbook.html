@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#163d70">
+<title>RRB NTPC UG CBT 1 | Day 7 | @no_need_textbook</title>
+<style>
+:root{--navy:#163d70;--blue:#2459a9;--pale:#eef4ff;--ink:#182238;--muted:#5f6d82;--line:#d9e1ee;--green:#147d4b;--red:#b42318}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f4f7fb;color:var(--ink);font-family:Arial,"Noto Sans Kannada",sans-serif;line-height:1.48}
+header{background:linear-gradient(135deg,#102b50,#2459a9);color:#fff;padding:18px 14px 16px;position:sticky;top:0;z-index:10;box-shadow:0 3px 12px #12213a30}
+.headwrap{max-width:980px;margin:auto}
+h1{font-size:clamp(20px,4vw,28px);line-height:1.2;margin:0 0 6px}
+.subtitle{font-size:13px;opacity:.94}
+.statusrow{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:13px}
+.pill{border:1px solid #ffffff55;background:#ffffff14;border-radius:999px;padding:7px 12px;font-weight:700;font-size:14px}
+#timer{font-variant-numeric:tabular-nums;font-size:17px;letter-spacing:.5px}
+main{max-width:980px;margin:18px auto;padding:0 12px 26px}
+.notice{background:#fff8df;border:1px solid #f0d78b;border-radius:12px;padding:12px 14px;font-size:13px;margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:12px 0 18px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.stat b{display:block;font-size:19px;color:var(--navy)}
+.stat span{font-size:12px;color:var(--muted)}
+.progress{height:8px;background:#dfe7f3;border-radius:99px;overflow:hidden;margin-top:10px}
+#progressFill{height:100%;width:0;background:#2d9b67;transition:width .2s}
+.section-title{background:#e7efff;border-left:5px solid var(--blue);border-radius:8px;padding:11px 13px;margin:22px 0 12px;font-size:17px;color:#163d70}
+.question{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px;margin:0 0 12px;box-shadow:0 2px 5px #12213a08;scroll-margin-top:145px}
+.qtop{display:flex;gap:10px;align-items:flex-start}
+.qnum{flex:0 0 34px;height:34px;border-radius:9px;background:var(--pale);color:var(--navy);display:grid;place-items:center;font-weight:800}
+.qtext{font-weight:700;flex:1}
+.kn{display:block;color:#3e4c62;font-weight:500;margin-top:4px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:13px 0 0 44px}
+.opt{display:flex;gap:9px;align-items:flex-start;padding:10px;border:1px solid #dce4ef;border-radius:9px;cursor:pointer;background:#fbfcff;min-height:42px}
+.opt:hover{border-color:#7298d7;background:#f1f6ff}
+.opt input{margin-top:4px;accent-color:var(--blue);flex-shrink:0}
+.opt:has(input:checked){border-color:var(--blue);background:#edf4ff}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+button{border:0;border-radius:10px;padding:12px 18px;font-size:15px;font-weight:700;cursor:pointer}
+#submitBtn{background:var(--green);color:#fff}
+#submitBtn:hover{filter:brightness(.95)}
+#topBtn{background:#e5ebf5;color:#1b3459}
+#result{display:none;background:#fff;border:2px solid #a7c8b3;border-radius:14px;padding:16px;margin:18px 0}
+#result h2{margin:0 0 10px;color:#145b38}
+.resultgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.resultbox{border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
+.resultbox b{display:block;font-size:20px}
+.reviewhead{margin:22px 0 10px}
+.review{border:1px solid var(--line);border-radius:10px;padding:11px;margin:8px 0;background:#fff}
+.review.correct{border-left:5px solid #15945b}
+.review.wrong{border-left:5px solid #d04444}
+.review.unanswered{border-left:5px solid #9aa6b8}
+.review strong{display:block;margin-bottom:5px}
+.review small{display:block;color:var(--muted);margin-top:4px}
+.tag{display:inline-block;font-size:12px;font-weight:800;padding:3px 8px;border-radius:99px;margin-top:7px}
+.correct .tag{background:#dcfce7;color:#166534}
+.wrong .tag{background:#fee2e2;color:#991b1b}
+.unanswered .tag{background:#edf0f5;color:#475569}
+footer{text-align:center;color:#627087;padding:22px 10px 30px;font-size:12px}
+.hidden{display:none!important}
+@media(max-width:600px){header{padding:14px 11px}.options{grid-template-columns:1fr;margin-left:0}.question{padding:12px}.stats{gap:6px}.stat{padding:8px 4px}.resultgrid{grid-template-columns:repeat(2,1fr)}.pill{font-size:12px}.qtext{font-size:15px}}
+@media print{header{position:static}.controls,.notice{display:none}body{background:#fff}.question{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div class="headwrap">
+    <h1>🚆 RRB NTPC Undergraduate CBT 1 — Day 7</h1>
+    <div class="subtitle">100-Question Bilingual Mock Test • English + ಕನ್ನಡ • @no_need_textbook</div>
+    <div class="statusrow">
+      <div class="pill">⏱ Time left: <span id="timer">90:00</span></div>
+      <div class="pill">Answered: <span id="answeredCount">0</span>/100</div>
+      <div class="pill">Marking: +1 / −⅓ / 0</div>
+    </div>
+    <div class="progress" aria-label="Answered progress"><div id="progressFill"></div></div>
+  </div>
+</header>
+<main>
+  <div class="notice"><b>Instructions / ಸೂಚನೆಗಳು:</b> Total 100 questions, 90 minutes. Correct answer: +1; wrong answer: −1/3; unanswered: 0. Your score and answer key remain hidden until you submit or the timer reaches zero. / ಒಟ್ಟು 100 ಪ್ರಶ್ನೆಗಳು, 90 ನಿಮಿಷಗಳು. ಸರಿಯಾದ ಉತ್ತರಕ್ಕೆ +1, ತಪ್ಪಾದ ಉತ್ತರಕ್ಕೆ −1/3, ಉತ್ತರಿಸದಿದ್ದರೆ 0 ಅಂಕ. ಸಲ್ಲಿಸಿದ ನಂತರ ಅಥವಾ ಸಮಯ ಮುಗಿದಾಗ ಮಾತ್ರ ಫಲಿತಾಂಶ ಮತ್ತು ಉತ್ತರ ಕೀ ಕಾಣಿಸುತ್ತದೆ.</div>
+  <div class="stats">
+    <div class="stat"><b>30</b><span>Mathematics / ಗಣಿತ</span></div>
+    <div class="stat"><b>30</b><span>Reasoning / ತಾರ್ಕಿಕ ಸಾಮರ್ಥ್ಯ</span></div>
+    <div class="stat"><b>40</b><span>General Awareness / ಸಾಮಾನ್ಯ ಅರಿವು</span></div>
+  </div>
+  <div id="questions"></div>
+  <div class="controls" id="controls">
+    <button id="submitBtn" type="button">Submit Test / ಪರೀಕ್ಷೆ ಸಲ್ಲಿಸಿ</button>
+    <button id="topBtn" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to Top / ಮೇಲಕ್ಕೆ</button>
+  </div>
+  <section id="result" aria-live="polite">
+    <h2>Test Result / ಪರೀಕ್ಷೆಯ ಫಲಿತಾಂಶ</h2>
+    <div class="resultgrid">
+      <div class="resultbox"><b id="netScore">0.00</b><span>Net score / ಅಂತಿಮ ಅಂಕ</span></div>
+      <div class="resultbox"><b id="correctCount">0</b><span>Correct / ಸರಿಯಾದವು</span></div>
+      <div class="resultbox"><b id="wrongCount">0</b><span>Wrong / ತಪ್ಪಾದವು</span></div>
+      <div class="resultbox"><b id="blankCount">0</b><span>Unanswered / ಉತ್ತರಿಸದವು</span></div>
+    </div>
+    <p id="scoreFormula"></p>
+    <p id="submitMessage"></p>
+    <h3 class="reviewhead">Answer Review / ಉತ್ತರ ಪರಿಶೀಲನೆ</h3>
+    <p>Each question below shows your selected answer and the correct answer. / ಕೆಳಗೆ ಪ್ರತಿಯೊಂದು ಪ್ರಶ್ನೆಗೆ ನಿಮ್ಮ ಆಯ್ಕೆ ಮತ್ತು ಸರಿಯಾದ ಉತ್ತರವನ್ನು ತೋರಿಸಲಾಗಿದೆ.</p>
+    <div id="reviewList"></div>
+  </section>
+</main>
+<footer>Practice responsibly • RRB NTPC UG CBT 1 • © 2026 @no_need_textbook</footer>
+<script>
+const DATA=[{"section":"Mathematics","en":"What is 35% of 840?","kn":"840ರ 35% ಎಷ್ಟು?","opts":["284","294","304","314"],"ans":1},{"section":"Mathematics","en":"Find the LCM of 18, 24 and 30.","kn":"18, 24 ಮತ್ತು 30ರ ಲಘು ಸಾಮಾನ್ಯ ಅಪವರ್ತ್ಯ (LCM) ಕಂಡುಹಿಡಿಯಿರಿ.","opts":["180","240","360","720"],"ans":2},{"section":"Mathematics","en":"Calculate: 7/12 + 5/18.","kn":"ಲೆಕ್ಕ ಹಾಕಿ: 7/12 + 5/18.","opts":["29/36","31/36","5/6","17/18"],"ans":1},{"section":"Mathematics","en":"Evaluate 3.6 × 2.5.","kn":"3.6 × 2.5ರ ಮೌಲ್ಯ ಕಂಡುಹಿಡಿಯಿರಿ.","opts":["8","8.5","9","9.5"],"ans":2},{"section":"Mathematics","en":"If 7x + 9 = 65, find x.","kn":"7x + 9 = 65 ಆಗಿದ್ದರೆ x ಕಂಡುಹಿಡಿಯಿರಿ.","opts":["6","7","8","9"],"ans":2},{"section":"Mathematics","en":"An item costing ₹2,400 is sold at an 8% loss. Find its selling price.","kn":"₹2,400 ಬೆಲೆಯ ವಸ್ತುವನ್ನು 8% ನಷ್ಟದಲ್ಲಿ ಮಾರಿದರೆ ಮಾರಾಟ ಬೆಲೆ ಎಷ್ಟು?","opts":["₹2,160","₹2,208","₹2,250","₹2,320"],"ans":1},{"section":"Mathematics","en":"A ₹2,500 item gets successive discounts of 20% and 10%. What is the final price?","kn":"₹2,500 ವಸ್ತುವಿಗೆ ಕ್ರಮವಾಗಿ 20% ಮತ್ತು 10% ರಿಯಾಯಿತಿ ನೀಡಿದರೆ ಅಂತಿಮ ಬೆಲೆ ಎಷ್ಟು?","opts":["₹1,750","₹1,800","₹1,850","₹2,000"],"ans":1},{"section":"Mathematics","en":"Find the compound interest on ₹5,000 at 10% per annum for 2 years, compounded annually.","kn":"ವಾರ್ಷಿಕ ಚಕ್ರಬಡ್ಡಿ ಲೆಕ್ಕದಲ್ಲಿ ₹5,000ಕ್ಕೆ ವರ್ಷಕ್ಕೆ 10% ದರದಲ್ಲಿ 2 ವರ್ಷಗಳ ಚಕ್ರಬಡ್ಡಿ ಎಷ್ಟು?","opts":["₹1,000","₹1,025","₹1,050","₹1,100"],"ans":2},{"section":"Mathematics","en":"A can complete a job in 12 days and B in 18 days. How long will they take working together?","kn":"A ಒಂದು ಕೆಲಸವನ್ನು 12 ದಿನಗಳಲ್ಲಿ ಮತ್ತು B 18 ದಿನಗಳಲ್ಲಿ ಮುಗಿಸುತ್ತಾರೆ. ಇಬ್ಬರೂ ಸೇರಿ ಎಷ್ಟು ದಿನ ತೆಗೆದುಕೊಳ್ಳುತ್ತಾರೆ?","opts":["6 days","7.2 days","8 days","9 days"],"ans":1},{"section":"Mathematics","en":"A vehicle covers 270 km in 3 hours 45 minutes. Find its average speed.","kn":"ಒಂದು ವಾಹನ 3 ಗಂಟೆ 45 ನಿಮಿಷಗಳಲ್ಲಿ 270 ಕಿ.ಮೀ. ಸಾಗುತ್ತದೆ. ಅದರ ಸರಾಸರಿ ವೇಗ ಎಷ್ಟು?","opts":["68 km/h","70 km/h","72 km/h","75 km/h"],"ans":2},{"section":"Mathematics","en":"A 180 m train travelling at 54 km/h passes a pole. How many seconds does it take?","kn":"ಗಂಟೆಗೆ 54 ಕಿ.ಮೀ. ವೇಗದಲ್ಲಿ ಚಲಿಸುವ 180 ಮೀ. ರೈಲು ಒಂದು ಕಂಬವನ್ನು ದಾಟಲು ಎಷ್ಟು ಸೆಕೆಂಡು ಬೇಕು?","opts":["10 seconds","12 seconds","15 seconds","18 seconds"],"ans":1},{"section":"Mathematics","en":"Find the average of 18, 24, 27, 31 and 40.","kn":"18, 24, 27, 31 ಮತ್ತು 40ರ ಸರಾಸರಿ ಕಂಡುಹಿಡಿಯಿರಿ.","opts":["26","27","28","29"],"ans":2},{"section":"Mathematics","en":"A town has a population of 72,000. It decreases by 12.5%. What is the new population?","kn":"ಒಂದು ಪಟ್ಟಣದ ಜನಸಂಖ್ಯೆ 72,000. ಅದು 12.5% ಕಡಿಮೆಯಾದರೆ ಹೊಸ ಜನಸಂಖ್ಯೆ ಎಷ್ಟು?","opts":["62,000","63,000","64,000","66,000"],"ans":1},{"section":"Mathematics","en":"Express 0.625 as a fraction in simplest form.","kn":"0.625 ಅನ್ನು ಅತ್ಯಂತ ಸರಳ ಭಿನ್ನರಾಶಿಯಾಗಿ ಬರೆಯಿರಿ.","opts":["3/5","5/8","2/3","7/8"],"ans":1},{"section":"Mathematics","en":"If 15 workers finish a job in 12 days, how many days will 20 workers take at the same rate?","kn":"15 ಕಾರ್ಮಿಕರು ಒಂದು ಕೆಲಸವನ್ನು 12 ದಿನಗಳಲ್ಲಿ ಮುಗಿಸಿದರೆ, ಅದೇ ವೇಗದಲ್ಲಿ 20 ಕಾರ್ಮಿಕರು ಎಷ್ಟು ದಿನ ತೆಗೆದುಕೊಳ್ಳುತ್ತಾರೆ?","opts":["8 days","9 days","10 days","12 days"],"ans":1},{"section":"Mathematics","en":"Find the area of a triangle with base 24 cm and height 15 cm.","kn":"ಅಡಿಪಾಯ 24 ಸೆಂ.ಮೀ. ಮತ್ತು ಎತ್ತರ 15 ಸೆಂ.ಮೀ. ಇರುವ ತ್ರಿಭುಜದ ವಿಸ್ತೀರ್ಣ ಎಷ್ಟು?","opts":["160 cm²","170 cm²","180 cm²","190 cm²"],"ans":2},{"section":"Mathematics","en":"Find the volume of a cylinder of radius 7 cm and height 10 cm. Use π = 22/7.","kn":"ತ್ರಿಜ್ಯ 7 ಸೆಂ.ಮೀ. ಮತ್ತು ಎತ್ತರ 10 ಸೆಂ.ಮೀ. ಇರುವ ಸಿಲಿಂಡರಿನ ಘನಫಲ ಕಂಡುಹಿಡಿಯಿರಿ. π = 22/7 ಬಳಸಿ.","opts":["1,440 cm³","1,500 cm³","1,540 cm³","1,600 cm³"],"ans":2},{"section":"Mathematics","en":"A circle has an area of 616 cm². Using π = 22/7, find its radius.","kn":"ಒಂದು ವೃತ್ತದ ವಿಸ್ತೀರ್ಣ 616 ಚ.ಸೆಂ.ಮೀ. ಆಗಿದೆ. π = 22/7 ಬಳಸಿ ಅದರ ತ್ರಿಜ್ಯ ಕಂಡುಹಿಡಿಯಿರಿ.","opts":["7 cm","14 cm","21 cm","28 cm"],"ans":1},{"section":"Mathematics","en":"Two supplementary angles are in the ratio 2:7. Find the smaller angle.","kn":"ಎರಡು ಪೂರಕ ಕೋನಗಳ ಅನುಪಾತ 2:7 ಆಗಿದ್ದರೆ ಚಿಕ್ಕ ಕೋನ ಎಷ್ಟು?","opts":["20°","40°","60°","80°"],"ans":1},{"section":"Mathematics","en":"Find √2025.","kn":"√2025ರ ಮೌಲ್ಯ ಕಂಡುಹಿಡಿಯಿರಿ.","opts":["35","40","45","50"],"ans":2},{"section":"Mathematics","en":"If 40% of a number is 96, what is 125% of that number?","kn":"ಒಂದು ಸಂಖ್ಯೆಯ 40% = 96 ಆಗಿದ್ದರೆ, ಆ ಸಂಖ್ಯೆಯ 125% ಎಷ್ಟು?","opts":["240","280","300","320"],"ans":2},{"section":"Mathematics","en":"A sum is divided in the ratio 4:7:9. If the second share is ₹2,100, find the total sum.","kn":"ಒಂದು ಮೊತ್ತವನ್ನು 4:7:9 ಅನುಪಾತದಲ್ಲಿ ಹಂಚಲಾಗಿದೆ. ಎರಡನೇ ಪಾಲು ₹2,100 ಆಗಿದ್ದರೆ ಒಟ್ಟು ಮೊತ್ತ ಎಷ್ಟು?","opts":["₹5,400","₹5,700","₹6,000","₹6,300"],"ans":2},{"section":"Mathematics","en":"One pipe fills a tank in 6 hours and another in 9 hours. How long will they take together?","kn":"ಒಂದು ಕೊಳವೆ ಟ್ಯಾಂಕ್ ಅನ್ನು 6 ಗಂಟೆಗಳಲ್ಲಿ ಮತ್ತು ಮತ್ತೊಂದು 9 ಗಂಟೆಗಳಲ್ಲಿ ತುಂಬುತ್ತದೆ. ಎರಡೂ ಸೇರಿ ಎಷ್ಟು ಸಮಯ ಬೇಕು?","opts":["3 hours 20 minutes","3 hours 30 minutes","3 hours 36 minutes","4 hours"],"ans":2},{"section":"Mathematics","en":"Find the mean of the first 11 positive multiples of 3.","kn":"3ರ ಮೊದಲ 11 ಧನಾತ್ಮಕ ಗುಣಿತಗಳ ಸರಾಸರಿ ಕಂಡುಹಿಡಿಯಿರಿ.","opts":["15","16","18","21"],"ans":2},{"section":"Mathematics","en":"Solve: 5(3x − 2) = 65.","kn":"ಪರಿಹರಿಸಿ: 5(3x − 2) = 65.","opts":["3","4","5","6"],"ans":2},{"section":"Mathematics","en":"A seller sells 12 items for the cost price of 15 items. What is the profit percentage?","kn":"ಒಬ್ಬ ವ್ಯಾಪಾರಿ 15 ವಸ್ತುಗಳ ಖರೀದಿ ಬೆಲೆಗೆ 12 ವಸ್ತುಗಳನ್ನು ಮಾರುತ್ತಾನೆ. ಲಾಭದ ಶೇಕಡಾವಾರು ಎಷ್ಟು?","opts":["20%","25%","30%","35%"],"ans":1},{"section":"Mathematics","en":"A 360 km journey is travelled 35% by bus and the rest by train. Find the train distance.","kn":"360 ಕಿ.ಮೀ. ಪ್ರಯಾಣದ 35% ಅನ್ನು ಬಸ್ಸಿನಲ್ಲಿ ಮತ್ತು ಉಳಿದುದನ್ನು ರೈಲಿನಲ್ಲಿ ಸಾಗಿದರೆ ರೈಲು ದೂರ ಎಷ್ಟು?","opts":["216 km","225 km","234 km","240 km"],"ans":2},{"section":"Mathematics","en":"Find the median of 13, 4, 19, 7, 11, 16 and 9.","kn":"13, 4, 19, 7, 11, 16 ಮತ್ತು 9ರ ಮಧ್ಯಕ ಕಂಡುಹಿಡಿಯಿರಿ.","opts":["9","10","11","13"],"ans":2},{"section":"Mathematics","en":"Four notebooks and two pens cost ₹94. Two notebooks and two pens cost ₹62. What is the cost of one notebook?","kn":"4 ನೋಟ್‌ಬುಕ್ ಮತ್ತು 2 ಪೆನ್‌ಗಳ ಬೆಲೆ ₹94. 2 ನೋಟ್‌ಬುಕ್ ಮತ್ತು 2 ಪೆನ್‌ಗಳ ಬೆಲೆ ₹62. ಒಂದು ನೋಟ್‌ಬುಕ್ ಬೆಲೆ ಎಷ್ಟು?","opts":["₹12","₹14","₹16","₹18"],"ans":2},{"section":"Mathematics","en":"A bag contains 5 red, 4 blue and 3 green balls. What is the probability of drawing a ball that is not blue?","kn":"ಒಂದು ಚೀಲದಲ್ಲಿ 5 ಕೆಂಪು, 4 ನೀಲಿ ಮತ್ತು 3 ಹಸಿರು ಚೆಂಡುಗಳಿವೆ. ನೀಲಿ ಅಲ್ಲದ ಚೆಂಡನ್ನು ತೆಗೆದುಕೊಳ್ಳುವ ಸಂಭವನೀಯತೆ ಎಷ್ಟು?","opts":["1/3","1/2","2/3","3/4"],"ans":2},{"section":"General Intelligence & Reasoning","en":"Find the next number: 4, 9, 19, 39, 79, __.","kn":"ಮುಂದಿನ ಸಂಖ್ಯೆ ಕಂಡುಹಿಡಿಯಿರಿ: 4, 9, 19, 39, 79, __.","opts":["119","149","159","169"],"ans":2},{"section":"General Intelligence & Reasoning","en":"Complete the letter series: B, E, I, N, T, __.","kn":"ಅಕ್ಷರ ಸರಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ: B, E, I, N, T, __.","opts":["Z","A","B","C"],"ans":1},{"section":"General Intelligence & Reasoning","en":"Which figure is different from the other three?","kn":"ಉಳಿದ ಮೂರು ಆಕೃತಿಗಳಿಗಿಂತ ಭಿನ್ನವಾದುದನ್ನು ಆಯ್ಕೆಮಾಡಿ.","opts":["Square","Triangle","Circle","Cube"],"ans":3},{"section":"General Intelligence & Reasoning","en":"If CAT is coded as DBU by moving each letter one step forward, how is DOG coded?","kn":"CAT ಅನ್ನು ಪ್ರತಿಯೊಂದು ಅಕ್ಷರವನ್ನು ಒಂದು ಸ್ಥಾನ ಮುಂದಕ್ಕೆ ಸರಿಸಿ DBU ಎಂದು ಸಂಕೇತಿಸಿದರೆ, DOG ಅನ್ನು ಹೇಗೆ ಸಂಕೇತಿಸಲಾಗುತ್ತದೆ?","opts":["EPH","EOG","FPH","EPG"],"ans":0},{"section":"General Intelligence & Reasoning","en":"A person walks 8 m north, 6 m east and then 8 m south. Where is the person from the starting point?","kn":"ಒಬ್ಬ ವ್ಯಕ್ತಿ 8 ಮೀ. ಉತ್ತರಕ್ಕೆ, 6 ಮೀ. ಪೂರ್ವಕ್ಕೆ, ನಂತರ 8 ಮೀ. ದಕ್ಷಿಣಕ್ಕೆ ನಡೆಯುತ್ತಾನೆ. ಆರಂಭಿಕ ಸ್ಥಳದಿಂದ ಈಗ ಎಲ್ಲಿದ್ದಾನೆ?","opts":["6 m east","6 m west","8 m north","14 m south"],"ans":0},{"section":"General Intelligence & Reasoning","en":"P is the mother of Q. Q is the brother of R. How is P related to R?","kn":"P, Qನ ತಾಯಿ. Q, Rನ ಸಹೋದರ. Pಗೆ R ಜೊತೆ ಯಾವ ಸಂಬಂಧ?","opts":["Aunt","Mother","Sister","Grandmother"],"ans":1},{"section":"General Intelligence & Reasoning","en":"A student ranks 17th from the top and 23rd from the bottom. How many students are there?","kn":"ಒಬ್ಬ ವಿದ್ಯಾರ್ಥಿ ಮೇಲಿನಿಂದ 17ನೇ ಮತ್ತು ಕೆಳಗಿನಿಂದ 23ನೇ ಸ್ಥಾನದಲ್ಲಿದ್ದಾನೆ. ಒಟ್ಟು ಎಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳಿದ್ದಾರೆ?","opts":["38","39","40","41"],"ans":1},{"section":"General Intelligence & Reasoning","en":"All roses are flowers. All flowers are plants. Which conclusion follows?","kn":"ಎಲ್ಲಾ ಗುಲಾಬಿಗಳು ಹೂಗಳು. ಎಲ್ಲಾ ಹೂಗಳು ಸಸ್ಯಗಳು. ಯಾವ ನಿರ್ಣಯ ಸರಿಯಾಗಿದೆ?","opts":["All roses are plants","All plants are roses","No rose is a plant","Some plants are not flowers"],"ans":0},{"section":"General Intelligence & Reasoning","en":"If 1 January is a Monday in a non-leap year, what day is 1 February?","kn":"ಅಧಿಕ ವರ್ಷವಲ್ಲದ ವರ್ಷದಲ್ಲಿ ಜನವರಿ 1 ಸೋಮವಾರವಾದರೆ, ಫೆಬ್ರವರಿ 1 ಯಾವ ವಾರದ ದಿನ?","opts":["Tuesday","Wednesday","Thursday","Friday"],"ans":2},{"section":"General Intelligence & Reasoning","en":"Bird is to nest as bee is to __.","kn":"ಹಕ್ಕಿ : ಗೂಡು :: ಜೇನುನೊಣ : __.","opts":["Den","Hive","Web","Burrow"],"ans":1},{"section":"General Intelligence & Reasoning","en":"Find the next number: 3, 6, 11, 18, 27, __.","kn":"ಮುಂದಿನ ಸಂಖ್ಯೆ ಕಂಡುಹಿಡಿಯಿರಿ: 3, 6, 11, 18, 27, __.","opts":["34","36","38","40"],"ans":2},{"section":"General Intelligence & Reasoning","en":"A is to the left of B, and B is to the left of C. Who is between A and C?","kn":"A, Bಯ ಎಡಭಾಗದಲ್ಲಿದ್ದಾನೆ ಮತ್ತು B, Cಯ ಎಡಭಾಗದಲ್ಲಿದ್ದಾನೆ. A ಮತ್ತು C ನಡುವೆ ಯಾರು ಇದ್ದಾರೆ?","opts":["A","B","C","Cannot be determined"],"ans":1},{"section":"General Intelligence & Reasoning","en":"If each letter's value is its position in the alphabet, what is the value of SUN?","kn":"ಪ್ರತಿ ಅಕ್ಷರದ ಮೌಲ್ಯವು ವರ್ಣಮಾಲೆಯಲ್ಲಿನ ಅದರ ಸ್ಥಾನವಾಗಿದ್ದರೆ, SUNನ ಮೌಲ್ಯ ಎಷ್ಟು?","opts":["52","53","54","55"],"ans":2},{"section":"General Intelligence & Reasoning","en":"If '+' means '×' and '×' means '−', evaluate 8 + 3 × 5.","kn":"'+' ಎಂದರೆ '×' ಮತ್ತು '×' ಎಂದರೆ '−' ಆಗಿದ್ದರೆ, 8 + 3 × 5ರ ಮೌಲ್ಯ ಕಂಡುಹಿಡಿಯಿರಿ.","opts":["19","24","29","35"],"ans":0},{"section":"General Intelligence & Reasoning","en":"In a class of 40 students, 22 play cricket, 18 play football and 7 play both. How many play neither?","kn":"40 ವಿದ್ಯಾರ್ಥಿಗಳ ತರಗತಿಯಲ್ಲಿ 22 ಜನ ಕ್ರಿಕೆಟ್, 18 ಜನ ಫುಟ್‌ಬಾಲ್ ಆಡುತ್ತಾರೆ; 7 ಜನ ಎರಡನ್ನೂ ಆಡುತ್ತಾರೆ. ಯಾವುದನ್ನೂ ಆಡದವರು ಎಷ್ಟು?","opts":["5","7","9","11"],"ans":1},{"section":"General Intelligence & Reasoning","en":"Find the missing number: 2, 6, 12, 20, 30, __.","kn":"ಬಿಟ್ಟಿರುವ ಸಂಖ್ಯೆಯನ್ನು ಕಂಡುಹಿಡಿಯಿರಿ: 2, 6, 12, 20, 30, __.","opts":["36","40","42","44"],"ans":2},{"section":"General Intelligence & Reasoning","en":"Choose the correct alphabetical order.","kn":"ಸರಿಯಾದ ವರ್ಣಮಾಲಾ ಕ್ರಮವನ್ನು ಆಯ್ಕೆಮಾಡಿ.","opts":["Brake, Branch, Brave, Bread","Branch, Brake, Brave, Bread","Bread, Brake, Branch, Brave","Brave, Brake, Branch, Bread"],"ans":0},{"section":"General Intelligence & Reasoning","en":"Using reverse alphabet values (A=26, B=25, …, Z=1), what is the value of CAT?","kn":"ಹಿಮ್ಮುಖ ವರ್ಣಮಾಲಾ ಮೌಲ್ಯಗಳನ್ನು (A=26, B=25, …, Z=1) ಬಳಸಿದರೆ CATನ ಮೌಲ್ಯ ಎಷ್ಟು?","opts":["55","56","57","58"],"ans":2},{"section":"General Intelligence & Reasoning","en":"All pens are tools. No tools are toys. Which conclusion follows?","kn":"ಎಲ್ಲಾ ಪೆನ್‌ಗಳು ಉಪಕರಣಗಳು. ಯಾವುದೇ ಉಪಕರಣ ಆಟಿಕೆ ಅಲ್ಲ. ಯಾವ ನಿರ್ಣಯ ಸರಿಯಾಗಿದೆ?","opts":["No pens are toys","All toys are pens","Some pens are toys","All tools are pens"],"ans":0},{"section":"General Intelligence & Reasoning","en":"What is the smaller angle between the hands of a clock at 3:30?","kn":"ಗಡಿಯಾರದಲ್ಲಿ 3:30ಕ್ಕೆ ಗಂಟೆ ಮತ್ತು ನಿಮಿಷದ ಮುಳ್ಳುಗಳ ನಡುವಿನ ಚಿಕ್ಕ ಕೋನ ಎಷ್ಟು?","opts":["60°","75°","90°","105°"],"ans":1},{"section":"General Intelligence & Reasoning","en":"If today is Wednesday, what day will it be after 45 days?","kn":"ಇಂದು ಬುಧವಾರವಾದರೆ, 45 ದಿನಗಳ ನಂತರ ಯಾವ ವಾರದ ದಿನವಾಗಿರುತ್ತದೆ?","opts":["Friday","Saturday","Sunday","Monday"],"ans":1},{"section":"General Intelligence & Reasoning","en":"If ROAD is coded as URDG by moving every letter three steps forward, how is MILK coded?","kn":"ROAD ಅನ್ನು ಪ್ರತಿ ಅಕ್ಷರವನ್ನು ಮೂರು ಸ್ಥಾನ ಮುಂದಕ್ಕೆ ಸರಿಸಿ URDG ಎಂದು ಸಂಕೇತಿಸಿದರೆ, MILK ಅನ್ನು ಹೇಗೆ ಸಂಕೇತಿಸಲಾಗುತ್ತದೆ?","opts":["PLON","PLOM","OLNM","PLNK"],"ans":0},{"section":"General Intelligence & Reasoning","en":"Complete the analogy: 64 : 8 :: 121 : __.","kn":"ಸಾದೃಶ್ಯವನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ: 64 : 8 :: 121 : __.","opts":["10","11","12","13"],"ans":1},{"section":"General Intelligence & Reasoning","en":"If P > Q, Q = R and R > S, which statement must be true?","kn":"P > Q, Q = R ಮತ್ತು R > S ಆಗಿದ್ದರೆ, ಯಾವ ಹೇಳಿಕೆ ಖಚಿತವಾಗಿ ಸತ್ಯ?","opts":["P < S","P = S","P > S","Cannot be concluded"],"ans":2},{"section":"General Intelligence & Reasoning","en":"Complete the letter pair series: AZ, BY, CX, DW, __.","kn":"ಅಕ್ಷರ ಜೋಡಿ ಸರಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ: AZ, BY, CX, DW, __.","opts":["EU","EV","FU","EX"],"ans":1},{"section":"General Intelligence & Reasoning","en":"Arrange these stages in a logical order.","kn":"ಈ ಹಂತಗಳನ್ನು ತಾರ್ಕಿಕ ಕ್ರಮದಲ್ಲಿ ಜೋಡಿಸಿ.","opts":["Plant, Seed, Fruit, Flower","Seed, Plant, Flower, Fruit","Flower, Fruit, Seed, Plant","Seed, Fruit, Plant, Flower"],"ans":1},{"section":"General Intelligence & Reasoning","en":"How many letters are between G and P in the English alphabet?","kn":"ಇಂಗ್ಲಿಷ್ ವರ್ಣಮಾಲೆಯಲ್ಲಿ G ಮತ್ತು P ಅಕ್ಷರಗಳ ನಡುವೆ ಎಷ್ಟು ಅಕ್ಷರಗಳಿವೆ?","opts":["7","8","9","10"],"ans":1},{"section":"General Intelligence & Reasoning","en":"If 7 corresponds to 50 using the rule n² + 1, what corresponds to 9?","kn":"n² + 1 ನಿಯಮದಂತೆ 7ಕ್ಕೆ 50 ಹೊಂದಿದರೆ, 9ಕ್ಕೆ ಯಾವ ಸಂಖ್ಯೆ ಹೊಂದುತ್ತದೆ?","opts":["80","81","82","90"],"ans":2},{"section":"General Intelligence & Reasoning","en":"Find the next number: 121, 144, 169, 196, __.","kn":"ಮುಂದಿನ ಸಂಖ್ಯೆ ಕಂಡುಹಿಡಿಯಿರಿ: 121, 144, 169, 196, __.","opts":["210","216","225","256"],"ans":2},{"section":"General Intelligence & Reasoning","en":"Choose the correct order of human life stages from earliest to latest.","kn":"ಮಾನವ ಜೀವನದ ಹಂತಗಳನ್ನು ಮೊದಲಿನಿಂದ ಕೊನೆಯವರೆಗೆ ಸರಿಯಾದ ಕ್ರಮದಲ್ಲಿ ಆಯ್ಕೆಮಾಡಿ.","opts":["Child, Infant, Adult, Adolescent","Infant, Child, Adolescent, Adult","Adolescent, Infant, Child, Adult","Infant, Adolescent, Child, Adult"],"ans":1},{"section":"General Awareness","en":"Who was the first Mughal emperor in India?","kn":"ಭಾರತದಲ್ಲಿ ಮೊದಲ ಮೊಘಲ್ ಚಕ್ರವರ್ತಿ ಯಾರು?","opts":["Akbar (ಅಕ್ಬರ್)","Babur (ಬಾಬರ್)","Humayun (ಹುಮಾಯೂನ್)","Shah Jahan (ಷಹಜಹಾನ್)"],"ans":1},{"section":"General Awareness","en":"The Non-Cooperation Movement was withdrawn after which incident?","kn":"ಯಾವ ಘಟನೆಯ ನಂತರ ಅಸಹಕಾರ ಚಳವಳಿಯನ್ನು ಹಿಂತೆಗೆದುಕೊಳ್ಳಲಾಯಿತು?","opts":["Kakori incident (ಕಾಕೋರಿ ಘಟನೆ)","Chauri Chaura incident (ಚೌರಿ ಚೌರಾ ಘಟನೆ)","Jallianwala Bagh (ಜಲಿಯನ್‌ವಾಲಾ ಬಾಗ್)","Dandi March (ದಂಡಿ ಯಾತ್ರೆ)"],"ans":1},{"section":"General Awareness","en":"Who co-founded the Indian Association in 1876 with Surendranath Banerjee?","kn":"1876ರಲ್ಲಿ ಸುರೇಂದ್ರನಾಥ್ ಬ್ಯಾನರ್ಜಿ ಅವರೊಂದಿಗೆ ಇಂಡಿಯನ್ ಅಸೋಸಿಯೇಷನ್ ಸ್ಥಾಪಿಸಿದವರು ಯಾರು?","opts":["Ananda Mohan Bose (ಆನಂದ ಮೋಹನ್ ಬೋಸ್)","Dadabhai Naoroji (ದಾದಾಭಾಯಿ ನವರೋಜಿ)","Gopal Krishna Gokhale (ಗೋಪಾಲ ಕೃಷ್ಣ ಗೋಖಲೆ)","Bal Gangadhar Tilak (ಬಾಲ ಗಂಗಾಧರ ತಿಲಕ್)"],"ans":0},{"section":"General Awareness","en":"What was the ancient name of the city now called Patna?","kn":"ಇಂದಿನ ಪಾಟ್ನಾ ನಗರದ ಪ್ರಾಚೀನ ಹೆಸರು ಯಾವುದು?","opts":["Taxila (ತಕ್ಷಶಿಲಾ)","Pataliputra (ಪಾಟಲಿಪುತ್ರ)","Ujjain (ಉಜ್ಜಯಿನಿ)","Kanchipuram (ಕಾಂಚೀಪುರಂ)"],"ans":1},{"section":"General Awareness","en":"Who was the first woman Governor of an Indian state?","kn":"ಭಾರತದ ರಾಜ್ಯದ ಮೊದಲ ಮಹಿಳಾ ರಾಜ್ಯಪಾಲರು ಯಾರು?","opts":["Vijaya Lakshmi Pandit (ವಿಜಯಲಕ್ಷ್ಮಿ ಪಂಡಿತ್)","Sarojini Naidu (ಸರೋಜಿನಿ ನಾಯ್ಡು)","Sucheta Kripalani (ಸುಚೇತಾ ಕೃಪಲಾನಿ)","Indira Gandhi (ಇಂದಿರಾ ಗಾಂಧಿ)"],"ans":1},{"section":"General Awareness","en":"Which Article of the Indian Constitution guarantees the right to constitutional remedies?","kn":"ಭಾರತೀಯ ಸಂವಿಧಾನದ ಯಾವ ವಿಧಿ ಸಾಂವಿಧಾನಿಕ ಪರಿಹಾರಗಳ ಹಕ್ಕನ್ನು ಖಚಿತಪಡಿಸುತ್ತದೆ?","opts":["Article 14 (ವಿಧಿ 14)","Article 19 (ವಿಧಿ 19)","Article 21 (ವಿಧಿ 21)","Article 32 (ವಿಧಿ 32)"],"ans":3},{"section":"General Awareness","en":"The quorum required to conduct a sitting of either House of Parliament is:","kn":"ಸಂಸತ್ತಿನ ಯಾವುದಾದರೂ ಸದನದ ಸಭೆ ನಡೆಯಲು ಅಗತ್ಯವಿರುವ ಕನಿಷ್ಠ ಹಾಜರಾತಿ ಎಷ್ಟು?","opts":["One-fifth of total membership (ಒಟ್ಟು ಸದಸ್ಯರ ಐದರಲ್ಲಿ ಒಂದು)","One-tenth of total membership (ಒಟ್ಟು ಸದಸ್ಯರ ಹತ್ತರಲ್ಲಿ ಒಂದು)","One-third of total membership (ಒಟ್ಟು ಸದಸ್ಯರ ಮೂರರಲ್ಲಿ ಒಂದು)","Half of total membership (ಒಟ್ಟು ಸದಸ್ಯರ ಅರ್ಧ)"],"ans":1},{"section":"General Awareness","en":"Who administers the oath of office to the President of India?","kn":"ಭಾರತದ ರಾಷ್ಟ್ರಪತಿಗೆ ಅಧಿಕಾರದ ಪ್ರಮಾಣವಚನ ಬೋಧಿಸುವವರು ಯಾರು?","opts":["Chief Justice of India (ಭಾರತದ ಮುಖ್ಯ ನ್ಯಾಯಮೂರ್ತಿ)","Prime Minister (ಪ್ರಧಾನಮಂತ್ರಿ)","Speaker of the Lok Sabha (ಲೋಕಸಭಾಧ್ಯಕ್ಷರು)","Vice-President (ಉಪರಾಷ್ಟ್ರಪತಿ)"],"ans":0},{"section":"General Awareness","en":"What is the term of office of the President of India?","kn":"ಭಾರತದ ರಾಷ್ಟ್ರಪತಿಯ ಅಧಿಕಾರಾವಧಿ ಎಷ್ಟು?","opts":["4 years (4 ವರ್ಷ)","5 years (5 ವರ್ಷ)","6 years (6 ವರ್ಷ)","7 years (7 ವರ್ಷ)"],"ans":1},{"section":"General Awareness","en":"Which Schedule of the Constitution allocates seats in the Rajya Sabha to states and Union Territories?","kn":"ರಾಜ್ಯಸಭೆಯಲ್ಲಿ ರಾಜ್ಯಗಳು ಮತ್ತು ಕೇಂದ್ರಾಡಳಿತ ಪ್ರದೇಶಗಳಿಗೆ ಸ್ಥಾನ ಹಂಚಿಕೆಯನ್ನು ಯಾವ ಅನುಸೂಚಿ ವಿವರಿಸುತ್ತದೆ?","opts":["Second Schedule (ಎರಡನೇ ಅನುಸೂಚಿ)","Third Schedule (ಮೂರನೇ ಅನುಸೂಚಿ)","Fourth Schedule (ನಾಲ್ಕನೇ ಅನುಸೂಚಿ)","Fifth Schedule (ಐದನೇ ಅನುಸೂಚಿ)"],"ans":2},{"section":"General Awareness","en":"Which is the longest river that flows entirely within India?","kn":"ಸಂಪೂರ್ಣವಾಗಿ ಭಾರತದೊಳಗೆ ಹರಿಯುವ ಅತಿ ಉದ್ದದ ನದಿ ಯಾವುದು?","opts":["Godavari (ಗೋದಾವರಿ)","Ganga (ಗಂಗಾ)","Narmada (ನರ್ಮದಾ)","Krishna (ಕೃಷ್ಣಾ)"],"ans":0},{"section":"General Awareness","en":"The Narmada River flows through a rift valley between which two ranges?","kn":"ನರ್ಮದಾ ನದಿ ಯಾವ ಎರಡು ಪರ್ವತಶ್ರೇಣಿಗಳ ನಡುವಿನ ಬಿರುಕು ಕಣಿವೆಯಲ್ಲಿ ಹರಿಯುತ್ತದೆ?","opts":["Aravalli and Himalaya (ಅರಾವಳಿ ಮತ್ತು ಹಿಮಾಲಯ)","Vindhya and Satpura (ವಿಂಧ್ಯ ಮತ್ತು ಸಾತ್ಪುರ)","Nilgiri and Anaimalai (ನೀಲಗಿರಿ ಮತ್ತು ಅನೈಮಲೈ)","Shivalik and Karakoram (ಶಿವಾಲಿಕ್ ಮತ್ತು ಕಾರಾಕೋರಂ)"],"ans":1},{"section":"General Awareness","en":"Kohima is the capital of which Indian state?","kn":"ಕೊಹಿಮಾ ಯಾವ ಭಾರತೀಯ ರಾಜ್ಯದ ರಾಜಧಾನಿ?","opts":["Manipur (ಮಣಿಪುರ)","Nagaland (ನಾಗಾಲ್ಯಾಂಡ್)","Meghalaya (ಮೇಘಾಲಯ)","Tripura (ತ್ರಿಪುರಾ)"],"ans":1},{"section":"General Awareness","en":"Which mountain pass connects Srinagar with Leh?","kn":"ಶ್ರೀನಗರವನ್ನು ಲೇಹ್‌ನೊಂದಿಗೆ ಸಂಪರ್ಕಿಸುವ ಪರ್ವತ ದಾರಿ ಯಾವುದು?","opts":["Nathu La (ನಾಥು ಲಾ)","Zoji La (ಜೋಜಿ ಲಾ)","Shipki La (ಶಿಪ್ಕಿ ಲಾ)","Bomdi La (ಬೊಮ್ಡಿ ಲಾ)"],"ans":1},{"section":"General Awareness","en":"Which group of islands is located in the Arabian Sea?","kn":"ಅರಬ್ಬೀ ಸಮುದ್ರದಲ್ಲಿರುವ ದ್ವೀಪ ಸಮೂಹ ಯಾವುದು?","opts":["Andaman and Nicobar (ಅಂಡಮಾನ್ ಮತ್ತು ನಿಕೋಬಾರ್)","Lakshadweep (ಲಕ್ಷದ್ವೀಪ)","Sundarbans (ಸುಂದರಬನ್ಸ್)","Majuli (ಮಜುಲಿ)"],"ans":1},{"section":"General Awareness","en":"Which gas makes up the largest proportion of Earth's atmosphere?","kn":"ಭೂಮಿಯ ವಾತಾವರಣದಲ್ಲಿ ಅತಿ ಹೆಚ್ಚಿನ ಪ್ರಮಾಣದಲ್ಲಿರುವ ಅನಿಲ ಯಾವುದು?","opts":["Oxygen (ಆಮ್ಲಜನಕ)","Carbon dioxide (ಕಾರ್ಬನ್ ಡೈಆಕ್ಸೈಡ್)","Nitrogen (ನೈಟ್ರೋಜನ್)","Hydrogen (ಹೈಡ್ರೋಜನ್)"],"ans":2},{"section":"General Awareness","en":"The loss of water vapour from plant leaves is called:","kn":"ಸಸ್ಯಗಳ ಎಲೆಗಳಿಂದ ನೀರಾವಿ ಹೊರಹೋಗುವ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಏನೆಂದು ಕರೆಯುತ್ತಾರೆ?","opts":["Respiration (ಉಸಿರಾಟ)","Transpiration (ವಾಷ್ಪೋತ್ಸರ್ಜನೆ)","Pollination (ಪರಾಗಸ್ಪರ್ಶ)","Germination (ಮೊಳಕೆ)"],"ans":1},{"section":"General Awareness","en":"Which part of the human brain mainly controls balance and posture?","kn":"ಮಾನವ ಮೆದುಳಿನ ಯಾವ ಭಾಗವು ಮುಖ್ಯವಾಗಿ ದೇಹದ ಸಮತೋಲನ ಮತ್ತು ಭಂಗಿಯನ್ನು ನಿಯಂತ್ರಿಸುತ್ತದೆ?","opts":["Cerebrum (ಮಹಾಮೆದುಳು)","Cerebellum (ಕಿರುಮೆದುಳು)","Medulla (ಮೆಡುಲ್ಲಾ)","Hypothalamus (ಹೈಪೋಥಾಲಮಸ್)"],"ans":1},{"section":"General Awareness","en":"Which type of lens is used to correct myopia (short-sightedness)?","kn":"ಸಮೀಪದೃಷ್ಟಿ ದೋಷವನ್ನು ಸರಿಪಡಿಸಲು ಯಾವ ಮಸೂರವನ್ನು ಬಳಸಲಾಗುತ್ತದೆ?","opts":["Convex lens (ಉಬ್ಬು ಮಸೂರ)","Concave lens (ತಗ್ಗು ಮಸೂರ)","Cylindrical lens only (ಸಿಲಿಂಡರಾಕಾರದ ಮಸೂರ ಮಾತ್ರ)","Bifocal lens only (ದ್ವಿಫೋಕಲ್ ಮಸೂರ ಮಾತ್ರ)"],"ans":1},{"section":"General Awareness","en":"What is the chemical formula of common table salt?","kn":"ಸಾಮಾನ್ಯ ಅಡುಗೆ ಉಪ್ಪಿನ ರಾಸಾಯನಿಕ ಸೂತ್ರ ಯಾವುದು?","opts":["NaCl","KCl","CaCO₃","Na₂CO₃"],"ans":0},{"section":"General Awareness","en":"Which metal is commonly used as the filament in incandescent bulbs?","kn":"ಸಾಮಾನ್ಯ ವಿದ್ಯುತ್ ಬಲ್ಬಿನ ತಂತಿಯಾಗಿ ಯಾವ ಲೋಹವನ್ನು ಬಳಸಲಾಗುತ್ತದೆ?","opts":["Copper (ತಾಮ್ರ)","Aluminium (ಅಲ್ಯೂಮಿನಿಯಂ)","Tungsten (ಟಂಗ್ಸ್ಟನ್)","Iron (ಕಬ್ಬಿಣ)"],"ans":2},{"section":"General Awareness","en":"Which structures on plant roots absorb most water from the soil?","kn":"ಮಣ್ಣಿನಿಂದ ಹೆಚ್ಚಿನ ನೀರನ್ನು ಹೀರಿಕೊಳ್ಳುವ ಸಸ್ಯದ ಬೇರುಗಳಲ್ಲಿನ ರಚನೆಗಳು ಯಾವುವು?","opts":["Root hairs (ಬೇರು ಕೂದಲುಗಳು)","Petals (ದಳಗಳು)","Stomata (ರಂಧ್ರಗಳು)","Anthers (ಪರಾಗಕೋಶಗಳು)"],"ans":0},{"section":"General Awareness","en":"Which mirror is commonly used as a rear-view mirror in vehicles?","kn":"ವಾಹನಗಳ ಹಿಂಬದಿ ದೃಶ್ಯ ಕನ್ನಡಿಯಾಗಿ ಸಾಮಾನ್ಯವಾಗಿ ಯಾವ ಕನ್ನಡಿಯನ್ನು ಬಳಸುತ್ತಾರೆ?","opts":["Plane mirror (ಸಮತಲ ಕನ್ನಡಿ)","Concave mirror (ತಗ್ಗು ಕನ್ನಡಿ)","Convex mirror (ಉಬ್ಬು ಕನ್ನಡಿ)","Parabolic mirror (ಪರಬೋಲಿಕ್ ಕನ್ನಡಿ)"],"ans":2},{"section":"General Awareness","en":"The ozone layer is mainly found in which layer of the atmosphere?","kn":"ವಾತಾವರಣದ ಯಾವ ಪದರದಲ್ಲಿ ಓಜೋನ್ ಪದರ ಮುಖ್ಯವಾಗಿ ಕಂಡುಬರುತ್ತದೆ?","opts":["Troposphere (ಕ್ಷೋಭಮಂಡಲ)","Stratosphere (ಸಮತಾಪಮಂಡಲ)","Mesosphere (ಮಧ್ಯಮಂಡಲ)","Thermosphere (ಉಷ್ಣಮಂಡಲ)"],"ans":1},{"section":"General Awareness","en":"What term describes the variety of living organisms in a region?","kn":"ಒಂದು ಪ್ರದೇಶದಲ್ಲಿರುವ ವಿವಿಧ ಜೀವಿಗಳ ವೈವಿಧ್ಯತೆಯನ್ನು ಏನೆಂದು ಕರೆಯುತ್ತಾರೆ?","opts":["Biodiversity (ಜೀವವೈವಿಧ್ಯ)","Erosion (ಸವೆತ)","Desertification (ಮರುಭೂಮೀಕರಣ)","Sedimentation (ಅವಸಾದನ)"],"ans":0},{"section":"General Awareness","en":"Which gas is a major component of biogas?","kn":"ಜೈವ ಅನಿಲದ ಪ್ರಮುಖ ಘಟಕ ಅನಿಲ ಯಾವುದು?","opts":["Methane (ಮೀಥೇನ್)","Oxygen (ಆಮ್ಲಜನಕ)","Nitrogen (ನೈಟ್ರೋಜನ್)","Ozone (ಓಜೋನ್)"],"ans":0},{"section":"General Awareness","en":"CITES is an international agreement concerned with:","kn":"CITES ಎಂಬ ಅಂತರರಾಷ್ಟ್ರೀಯ ಒಪ್ಪಂದವು ಯಾವುದಕ್ಕೆ ಸಂಬಂಧಿಸಿದೆ?","opts":["International trade in endangered species (ಅಳಿವಿನಂಚಿನ ಪ್ರಭೇದಗಳ ಅಂತರರಾಷ್ಟ್ರೀಯ ವ್ಯಾಪಾರ)","Protection of the ozone layer (ಓಜೋನ್ ಪದರದ ರಕ್ಷಣೆ)","Control of nuclear weapons (ಅಣ್ವಸ್ತ್ರ ನಿಯಂತ್ರಣ)","Marine navigation safety (ಸಮುದ್ರ ಸಂಚಾರ ಸುರಕ್ಷತೆ)"],"ans":0},{"section":"General Awareness","en":"Where is the headquarters of the World Health Organization (WHO)?","kn":"ವಿಶ್ವ ಆರೋಗ್ಯ ಸಂಸ್ಥೆಯ (WHO) ಪ್ರಧಾನ ಕಚೇರಿ ಎಲ್ಲಿದೆ?","opts":["Paris, France (ಪ್ಯಾರಿಸ್, ಫ್ರಾನ್ಸ್)","Geneva, Switzerland (ಜಿನೀವಾ, ಸ್ವಿಟ್ಜರ್ಲೆಂಡ್)","Rome, Italy (ರೋಮ್, ಇಟಲಿ)","Vienna, Austria (ವಿಯೆನ್ನಾ, ಆಸ್ಟ್ರಿಯಾ)"],"ans":1},{"section":"General Awareness","en":"What is the currency of Thailand?","kn":"ಥೈಲ್ಯಾಂಡ್‌ನ ಕರೆನ್ಸಿ ಯಾವುದು?","opts":["Rupiah (ರೂಪಿಯಾ)","Baht (ಬಾಟ್)","Ringgit (ರಿಂಗಿಟ್)","Taka (ಟಾಕಾ)"],"ans":1},{"section":"General Awareness","en":"Which strait separates India and Sri Lanka?","kn":"ಭಾರತ ಮತ್ತು ಶ್ರೀಲಂಕಾವನ್ನು ಬೇರ್ಪಡಿಸುವ ಜಲಸಂಧಿ ಯಾವುದು?","opts":["Malacca Strait (ಮಲಕ್ಕಾ ಜಲಸಂಧಿ)","Palk Strait (ಪಾಕ್ ಜಲಸಂಧಿ)","Bering Strait (ಬೆರಿಂಗ್ ಜಲಸಂಧಿ)","Hormuz Strait (ಹೋರ್ಮುಜ್ ಜಲಸಂಧಿ)"],"ans":1},{"section":"General Awareness","en":"Which continent has the greatest number of countries?","kn":"ಅತಿ ಹೆಚ್ಚು ದೇಶಗಳನ್ನು ಹೊಂದಿರುವ ಖಂಡ ಯಾವುದು?","opts":["Asia (ಏಷ್ಯಾ)","Africa (ಆಫ್ರಿಕಾ)","Europe (ಯುರೋಪ್)","South America (ದಕ್ಷಿಣ ಅಮೆರಿಕಾ)"],"ans":1},{"section":"General Awareness","en":"Bihu is a major traditional festival of which state?","kn":"ಬಿಹು ಯಾವ ರಾಜ್ಯದ ಪ್ರಮುಖ ಸಾಂಪ್ರದಾಯಿಕ ಹಬ್ಬ?","opts":["Assam (ಅಸ್ಸಾಂ)","Punjab (ಪಂಜಾಬ್)","Gujarat (ಗುಜರಾತ್)","Odisha (ಒಡಿಶಾ)"],"ans":0},{"section":"General Awareness","en":"Bhangra is a folk dance traditionally associated with which state?","kn":"ಭಾಂಗ್ರಾ ಯಾವ ರಾಜ್ಯದೊಂದಿಗೆ ಸಾಂಪ್ರದಾಯಿಕವಾಗಿ ಸಂಬಂಧಿಸಿದ ಜನಪದ ನೃತ್ಯ?","opts":["Kerala (ಕೇರಳ)","Punjab (ಪಂಜಾಬ್)","Bihar (ಬಿಹಾರ)","Goa (ಗೋವಾ)"],"ans":1},{"section":"General Awareness","en":"Who wrote the song 'Vande Mataram'?","kn":"'ವಂದೇ ಮಾತರಂ' ಗೀತೆಯನ್ನು ರಚಿಸಿದವರು ಯಾರು?","opts":["Rabindranath Tagore (ರವೀಂದ್ರನಾಥ ಟ್ಯಾಗೋರ್)","Bankim Chandra Chattopadhyay (ಬಂಕಿಮಚಂದ್ರ ಚಟ್ಟೋಪಾಧ್ಯಾಯ)","Muhammad Iqbal (ಮೊಹಮ್ಮದ್ ಇಕ್ಬಾಲ್)","Subramania Bharati (ಸುಬ್ರಹ್ಮಣ್ಯ ಭಾರತಿ)"],"ans":1},{"section":"General Awareness","en":"The santoor is a traditional musical instrument strongly associated with which region of India?","kn":"ಸಂತೂರ್ ಎಂಬ ಸಾಂಪ್ರದಾಯಿಕ ಸಂಗೀತ ವಾದ್ಯವು ಭಾರತದ ಯಾವ ಪ್ರದೇಶದೊಂದಿಗೆ ಹೆಚ್ಚು ಸಂಬಂಧಿಸಿದೆ?","opts":["Kashmir (ಕಾಶ್ಮೀರ)","Konkan (ಕೊಂಕಣ)","Malwa (ಮಾಳ್ವಾ)","Bundelkhand (ಬುಂದೇಲ್‌ಖಂಡ್)"],"ans":0},{"section":"General Awareness","en":"The term 'LBW' is used in which sport?","kn":"'LBW' ಎಂಬ ಪದವನ್ನು ಯಾವ ಕ್ರೀಡೆಯಲ್ಲಿ ಬಳಸುತ್ತಾರೆ?","opts":["Hockey (ಹಾಕಿ)","Cricket (ಕ್ರಿಕೆಟ್)","Volleyball (ವಾಲಿಬಾಲ್)","Basketball (ಬ್ಯಾಸ್ಕೆಟ್‌ಬಾಲ್)"],"ans":1},{"section":"General Awareness","en":"A marathon race is approximately how long?","kn":"ಮ್ಯಾರಥಾನ್ ಓಟದ ದೂರವು ಸರಿಸುಮಾರು ಎಷ್ಟು?","opts":["21.1 km","40 km","42.195 km","50 km"],"ans":2},{"section":"General Awareness","en":"Which Indian agency releases official estimates of national income and GDP?","kn":"ರಾಷ್ಟ್ರೀಯ ಆದಾಯ ಮತ್ತು GDPಯ ಅಧಿಕೃತ ಅಂದಾಜುಗಳನ್ನು ಪ್ರಕಟಿಸುವ ಭಾರತೀಯ ಸಂಸ್ಥೆ ಯಾವುದು?","opts":["Election Commission of India (ಭಾರತದ ಚುನಾವಣಾ ಆಯೋಗ)","National Statistical Office (ರಾಷ್ಟ್ರೀಯ ಅಂಕಿಅಂಶ ಕಚೇರಿ)","NITI Aayog (ನೀತಿ ಆಯೋಗ)","Finance Commission (ಹಣಕಾಸು ಆಯೋಗ)"],"ans":1},{"section":"General Awareness","en":"What is the full form of ATM in banking?","kn":"ಬ್ಯಾಂಕಿಂಗ್‌ನಲ್ಲಿ ATMನ ಪೂರ್ಣ ರೂಪ ಯಾವುದು?","opts":["Automated Teller Machine (ಆಟೋಮೇಟೆಡ್ ಟೆಲ್ಲರ್ ಮೆಷಿನ್)","Automatic Transfer Method (ಆಟೋಮ್ಯಾಟಿಕ್ ಟ್ರಾನ್ಸ್‌ಫರ್ ಮೆಥಡ್)","Any Time Money (ಎನಿ ಟೈಮ್ ಮನಿ)","Account Transaction Mode (ಅಕೌಂಟ್ ಟ್ರಾನ್ಸಾಕ್ಷನ್ ಮೋಡ್)"],"ans":0},{"section":"General Awareness","en":"Which device converts sunlight directly into electrical energy?","kn":"ಸೂರ್ಯನ ಬೆಳಕನ್ನು ನೇರವಾಗಿ ವಿದ್ಯುತ್ ಶಕ್ತಿಯಾಗಿ ಪರಿವರ್ತಿಸುವ ಸಾಧನ ಯಾವುದು?","opts":["Solar cell (ಸೌರ ಕೋಶ)","Generator (ಜನರೇಟರ್)","Transformer (ಟ್ರಾನ್ಸ್‌ಫಾರ್ಮರ್)","Electric motor (ವಿದ್ಯುತ್ ಮೋಟಾರ್)"],"ans":0}];
+const SECTION_ORDER=["Mathematics","General Intelligence & Reasoning","General Awareness"];
+const SECTION_LABELS={
+  "Mathematics":"Section A — Mathematics / ವಿಭಾಗ A — ಗಣಿತ",
+  "General Intelligence & Reasoning":"Section B — General Intelligence & Reasoning / ವಿಭಾಗ B — ಸಾಮಾನ್ಯ ಬುದ್ಧಿಮತ್ತೆ ಮತ್ತು ತಾರ್ಕಿಕ ಸಾಮರ್ಥ್ಯ",
+  "General Awareness":"Section C — General Awareness / ವಿಭಾಗ C — ಸಾಮಾನ್ಯ ಅರಿವು"
+};
+const esc=(s)=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const qHost=document.getElementById("questions");
+for(const section of SECTION_ORDER){
+  const title=document.createElement("h2");
+  title.className="section-title";
+  title.textContent=SECTION_LABELS[section];
+  qHost.appendChild(title);
+  DATA.forEach((q,i)=>{
+    if(q.section!==section)return;
+    const card=document.createElement("article");
+    card.className="question";
+    card.id="qcard"+i;
+    let options=q.opts.map((opt,j)=>`<label class="opt" for="q${i}_${j}"><input id="q${i}_${j}" type="radio" name="q${i}" value="${j}" aria-label="Question ${i+1}, option ${String.fromCharCode(65+j)}"><span><b>${String.fromCharCode(65+j)}.</b> ${esc(opt)}</span></label>`).join("");
+    card.innerHTML=`<div class="qtop"><div class="qnum">${i+1}</div><div class="qtext">${esc(q.en)}<span class="kn" lang="kn">${esc(q.kn)}</span></div></div><div class="options">${options}</div>`;
+    qHost.appendChild(card);
+  });
+}
+let remaining=90*60;
+let submitted=false;
+const timerEl=document.getElementById("timer");
+function updateProgress(){
+  const count=DATA.reduce((n,q,i)=>n+(document.querySelector(`input[name="q${i}"]:checked`)?1:0),0);
+  document.getElementById("answeredCount").textContent=count;
+  document.getElementById("progressFill").style.width=(count/DATA.length*100)+"%";
+}
+document.addEventListener("change",e=>{if(e.target.matches('input[type="radio"]'))updateProgress();});
+function tick(){
+  if(submitted)return;
+  const mm=String(Math.floor(remaining/60)).padStart(2,"0");
+  const ss=String(remaining%60).padStart(2,"0");
+  timerEl.textContent=mm+":"+ss;
+  if(remaining<=0){timerEl.textContent="00:00";submitTest(true);return;}
+  remaining--;
+}
+tick();
+const timerHandle=setInterval(tick,1000);
+function submitTest(auto=false){
+  if(submitted)return;
+  if(!auto && !confirm("Submit your test now? You cannot change answers after submission.\nಈಗ ಪರೀಕ್ಷೆ ಸಲ್ಲಿಸಬೇಕೇ? ಸಲ್ಲಿಸಿದ ನಂತರ ಉತ್ತರಗಳನ್ನು ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ."))return;
+  submitted=true;
+  clearInterval(timerHandle);
+  document.querySelectorAll('input[type="radio"]').forEach(el=>el.disabled=true);
+  document.getElementById("submitBtn").disabled=true;
+  document.getElementById("submitBtn").textContent=auto?"Time is up — Submitted / ಸಮಯ ಮುಗಿದಿದೆ":"Submitted / ಸಲ್ಲಿಸಲಾಗಿದೆ";
+  let correct=0,wrong=0,blank=0;
+  const review=document.getElementById("reviewList");
+  review.innerHTML="";
+  DATA.forEach((q,i)=>{
+    const selected=document.querySelector(`input[name="q${i}"]:checked`);
+    const chosen=selected?Number(selected.value):null;
+    let status;
+    if(chosen===null){blank++;status="unanswered";}
+    else if(chosen===q.ans){correct++;status="correct";}
+    else{wrong++;status="wrong";}
+    const chosenText=chosen===null?"Not answered / ಉತ್ತರಿಸಿಲ್ಲ":`${String.fromCharCode(65+chosen)}. ${q.opts[chosen]}`;
+    const correctText=`${String.fromCharCode(65+q.ans)}. ${q.opts[q.ans]}`;
+    const statusText=status==="correct"?"Correct / ಸರಿಯಾಗಿದೆ":status==="wrong"?"Incorrect / ತಪ್ಪಾಗಿದೆ":"Unanswered / ಉತ್ತರಿಸಿಲ್ಲ";
+    const item=document.createElement("div");
+    item.className="review "+status;
+    item.innerHTML=`<strong>Q${i+1}. ${esc(q.en)} <span class="kn" lang="kn">${esc(q.kn)}</span></strong><div><b>Your answer / ನಿಮ್ಮ ಉತ್ತರ:</b> ${esc(chosenText)}</div><div><b>Correct answer / ಸರಿಯಾದ ಉತ್ತರ:</b> ${esc(correctText)}</div><span class="tag">${statusText}</span>`;
+    review.appendChild(item);
+  });
+  const penalty=wrong/3;
+  const net=correct-penalty;
+  document.getElementById("netScore").textContent=net.toFixed(2)+" / 100";
+  document.getElementById("correctCount").textContent=correct;
+  document.getElementById("wrongCount").textContent=wrong;
+  document.getElementById("blankCount").textContent=blank;
+  document.getElementById("scoreFormula").innerHTML=`<b>Calculation / ಲೆಕ್ಕಾಚಾರ:</b> ${correct} × 1 − ${wrong} × ⅓ = <b>${net.toFixed(2)} marks</b>. Negative-mark penalty: <b>${penalty.toFixed(2)}</b>. Unanswered questions carry 0 marks.`;
+  document.getElementById("submitMessage").textContent=auto?"The timer expired, so the test was submitted automatically. / ಸಮಯ ಮುಗಿದ ಕಾರಣ ಪರೀಕ್ಷೆಯನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸಲ್ಲಿಸಲಾಗಿದೆ.":"Your test has been submitted successfully. / ನಿಮ್ಮ ಪರೀಕ್ಷೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಸಲಾಗಿದೆ.";
+  const result=document.getElementById("result");
+  result.style.display="block";
+  document.getElementById("controls").classList.add("hidden");
+  result.scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.getElementById("submitBtn").addEventListener("click",()=>submitTest(false));
+</script>
+</body>
+</html>
