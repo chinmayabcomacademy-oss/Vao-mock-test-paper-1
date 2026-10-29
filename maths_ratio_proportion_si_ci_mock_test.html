@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Maths Mock Test - Chinmaya B.Com Academy</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f5fa;color:#172033;font:16px/1.5 Arial,sans-serif}.wrap{max-width:900px;margin:auto;padding:16px}.card{background:white;padding:22px;margin:12px 0;border-radius:14px;box-shadow:0 4px 18px #17203312}h1{color:#153e75;font-size:1.45rem;margin-top:0}.muted,.small{color:#59677d}.small{font-size:.9rem}button{background:#153e75;color:white;border:0;border-radius:8px;padding:11px 16px;font-size:1rem;cursor:pointer;margin:4px}.secondary{background:#e7edf7;color:#1d3154}.hidden{display:none!important}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}#timer{font-weight:bold;font-size:1.2rem;color:#b42318;background:#fff0ef;padding:8px 12px;border-radius:8px}.q{padding:16px 0;border-bottom:1px solid #e6eaf1}.q p:first-child{font-weight:bold;margin:0 0 10px}.option{display:block;padding:8px 10px;margin:6px 0;border:1px solid #dce3ee;border-radius:8px;cursor:pointer}.option:hover{background:#eef4ff}.option input{margin-right:8px}.correct{color:#16794b}.wrong{color:#b42318}.result{font-size:1.25rem;font-weight:bold}.actions{position:sticky;bottom:0;background:#f2f5fa;padding:10px 0}
+</style></head><body><main class="wrap">
+<section id="intro" class="card"><h1>Announcement of Mock Test — Maths</h1><p><b>Topics:</b> Ratio &amp; Proportion; Simple Interest &amp; Compound Interest</p><p><b>Marks:</b> 60 &nbsp; • &nbsp; <b>Questions:</b> 60 MCQs &nbsp; • &nbsp; <b>Time:</b> 60 minutes</p><p class="muted">Objective pattern • 4 options per question • 1 mark each • No negative marking</p><button id="start">Start Mock Test</button><p class="small">Chinmaya B.Com Academy</p></section>
+<section id="test" class="card hidden"><div class="top"><div><h1>Maths Mock Test</h1><p class="muted">Ratio &amp; Proportion • SI &amp; CI</p></div><div id="timer">60:00</div></div><p class="small">Select one option for each question. Your score and correct answers appear after submission.</p><div id="questions"></div><div class="actions"><button id="submit">Submit Test</button><button id="clear" class="secondary">Clear Answers</button></div></section>
+<section id="result" class="card hidden"><h2>Final Result</h2><p id="score" class="result"></p><p id="summary"></p><button id="showAnswers">Show Correct Answers &amp; Explanations</button><div id="answers" class="hidden"></div><button onclick="location.reload()" class="secondary">Restart Test</button></section></main>
+<script>
+const qs=[];
+function add(q,correct,wrong,exp){let opts=[correct,...wrong];let rotate=(qs.length*7)%4;opts=opts.slice(rotate).concat(opts.slice(0,rotate));qs.push({q,o:opts,a:opts.indexOf(correct),e:exp})}
+const ratioCases=[
+[12,18,"Simplify the ratio 12 : 18.","2 : 3",["3 : 2","4 : 5","3 : 4"],"Divide both terms by their highest common factor, 6."],
+[3,5,"If 3 : 5 = x : 40, find x.","24",["20","30","32"],"3/5 = x/40, so x = 24."],
+[720,12,"Divide ₹720 in the ratio 5 : 7. Find the smaller share.","₹300",["₹350","₹420","₹400"],"There are 12 parts; each part is ₹60, so the smaller share is ₹300."],
+[4,9,"If A : B = 4 : 9 and B = 45, find A.","20",["15","18","25"],"A/45 = 4/9, so A = 20."],
+[4,7,"Two numbers are in the ratio 4 : 7 and their sum is 99. Find the larger number.","63",["36","45","72"],"There are 11 parts; each is 9, and the larger number is 7 × 9 = 63."],
+[5,8,"Two numbers are in the ratio 5 : 8 and their difference is 39. Find their sum.","169",["117","130","91"],"Three parts equal 39, so one part is 13; the sum is 13 parts = 169."],
+[2,3,"If A : B = 2 : 3 and B : C = 4 : 5, then A : B : C is:","8 : 12 : 15",["2 : 4 : 5","6 : 12 : 15","8 : 3 : 5"],"Make the common B term 12: the combined ratio is 8 : 12 : 15."],
+[40,60,"If 40% of A equals 60% of B, then A : B is:","3 : 2",["2 : 3","4 : 5","5 : 4"],"0.4A = 0.6B, so A/B = 3/2."],
+[7,5,"The ratio of boys to girls is 7 : 5. If there are 48 students, how many are girls?","20",["24","28","30"],"Total parts = 12; each part = 4; girls = 5 × 4 = 20."],
+[6,9,"Find the fourth proportional to 6, 9 and 14.","21",["18","24","27"],"6 : 9 = 14 : x, hence x = 21."]
+];
+ratioCases.forEach(x=>add(x[2],x[3],x[4],x[5]));
+// Create additional distinct ratio/proportion practice items.
+for(let i=0;i<10;i++){let a=2+i,b=5+i,scale=3+(i%4),x=a*scale,y=b*scale;add(`Simplify the ratio ${x} : ${y}.`,`${a} : ${b}`,[`${b} : ${a}`,`${a+1} : ${b}`,`${a} : ${b+1}`],`Divide both terms by ${scale} to obtain ${a} : ${b}.`)}
+for(let i=0;i<5;i++){let workers=8+i,days=12+i,workers2=workers+4;let d=workers*days/workers2;let ans=Number.isInteger(d)?String(d):d.toFixed(1);let wrong=[String(Number(ans)+2),String(Math.max(1,Number(ans)-2)),String(workers2*days/workers)];add(`${workers} workers complete a job in ${days} days. How many days will ${workers2} workers take at the same rate?`,ans,wrong,`Workers and days are inversely proportional: ${workers} × ${days} ÷ ${workers2} = ${ans} days.`)}
+// Simple interest questions
+for(let i=0;i<20;i++){
+ let P=[2000,3000,4000,5000,6000,7500,8000,10000,12000,1500][i%10];
+ let R=[4,5,6,8,10][i%5], T=[2,3,4,5][i%4], si=P*R*T/100;
+ if(i%4===0){add(`Find the simple interest on ₹${P.toLocaleString('en-IN')} at ${R}% per annum for ${T} years.`,`₹${si.toLocaleString('en-IN')}`, [`₹${(si+100).toLocaleString('en-IN')}`,`₹${(si-100).toLocaleString('en-IN')}`,`₹${(P*R/100).toLocaleString('en-IN')}`],`SI = P × R × T / 100 = ${P} × ${R} × ${T} / 100 = ₹${si}.`)}
+ else if(i%4===1){let amount=P+si;add(`Find the amount on ₹${P.toLocaleString('en-IN')} at ${R}% simple interest for ${T} years.`,`₹${amount.toLocaleString('en-IN')}`, [`₹${(amount+200).toLocaleString('en-IN')}`,`₹${(amount-100).toLocaleString('en-IN')}`,`₹${(P+P*R/100).toLocaleString('en-IN')}`],`Amount = Principal + SI = ₹${P} + ₹${si} = ₹${amount}.`)}
+ else if(i%4===2){let rate=si*100/(P*T);add(`₹${P.toLocaleString('en-IN')} earns ₹${si} simple interest in ${T} years. Find the annual rate.`,`${rate}%`,[`${rate+2}%`,`${rate+1}%`,`${Math.max(1,rate-2)}%`],`Rate = SI × 100 ÷ (Principal × Time) = ${si} × 100 ÷ (${P} × ${T}) = ${rate}%.`)}
+ else {add(`At ${R}% simple interest, how many years will ₹${P.toLocaleString('en-IN')} take to earn ₹${si}?`,`${T} years`,[`${T+1} years`,`${Math.max(1,T-1)} years`,`${T+2} years`],`Time = SI × 100 ÷ (Principal × Rate) = ${si} × 100 ÷ (${P} × ${R}) = ${T} years.`)}
+}
+// Compound interest questions
+for(let i=0;i<20;i++){
+ let P=[1000,2000,2500,3000,4000,5000,6000,8000,10000,12000][i%10], R=[5,10,20,4,8][i%5], T=(i%3)+1;
+ let A=Math.round(P*Math.pow(1+R/100,T)*100)/100, ci=Math.round((A-P)*100)/100;
+ if(i%3===0){add(`Find the amount on ₹${P.toLocaleString('en-IN')} at ${R}% compound interest per annum for ${T} year(s), compounded annually.`,`₹${A.toLocaleString('en-IN')}`,[`₹${(A+P*R/100).toLocaleString('en-IN')}`,`₹${(P+P*R*T/100).toLocaleString('en-IN')}`,`₹${(A-100).toLocaleString('en-IN')}`],`Amount = P(1 + R/100)^T = ${P}(1 + ${R}/100)^${T} = ₹${A}.`)}
+ else if(i%3===1){add(`Find the compound interest on ₹${P.toLocaleString('en-IN')} at ${R}% annually for ${T} year(s).`,`₹${ci.toLocaleString('en-IN')}`,[`₹${(ci+P*R/100).toLocaleString('en-IN')}`,`₹${(P*R*T/100).toLocaleString('en-IN')}`,`₹${Math.max(0,ci-100).toLocaleString('en-IN')}`],`Compound interest = Amount − Principal = ₹${A} − ₹${P} = ₹${ci}.`)}
+ else {let first=P*R/100;add(`At ${R}% compound interest compounded annually, what is the interest earned in the second year on an initial ₹${P.toLocaleString('en-IN')}?`,`₹${(first*(1+R/100)).toLocaleString('en-IN')}`,[`₹${first.toLocaleString('en-IN')}`,`₹${(first+P*R/100).toLocaleString('en-IN')}`,`₹${(first*2).toLocaleString('en-IN')}`],`Second-year interest is calculated on the amount after year one: ₹${P} × (1 + ${R}/100) × ${R}/100 = ₹${(first*(1+R/100)).toLocaleString('en-IN')}.`)}
+}
+qs.length=60;
+let remaining=3600, timer=null, done=false;
+const $=id=>document.getElementById(id);
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('start').onclick=()=>{$('intro').classList.add('hidden');$('test').classList.remove('hidden');render();update();timer=setInterval(()=>{remaining--;update();if(remaining<=0){clearInterval(timer);finish(true)}},1000)};
+function render(){$('questions').innerHTML=qs.map((q,i)=>`<div class="q"><p>${i+1}. ${esc(q.q)}</p>${q.o.map((v,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}">${String.fromCharCode(65+j)}. ${esc(v)}</label>`).join('')}</div>`).join('')}
+function update(){let t=Math.max(remaining,0);$('timer').textContent=String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0')}
+$('submit').onclick=()=>finish(false);$('clear').onclick=()=>{if(!done)document.querySelectorAll('#questions input').forEach(x=>x.checked=false)};
+function finish(auto){if(done)return;if(!auto&&!confirm('Submit your test now?'))return;done=true;clearInterval(timer);let score=0,answered=0;qs.forEach((q,i)=>{const s=document.querySelector(`input[name="q${i}"]:checked`);if(s){answered++;if(+s.value===q.a)score++}});$('test').classList.add('hidden');$('result').classList.remove('hidden');$('score').textContent=`Score: ${score} / 60 (${Math.round(score/60*100)}%)`;$('summary').textContent=`Answered: ${answered} • Unanswered: ${60-answered}${auto?' • Time expired; test auto-submitted.':''}`;window.scrollTo(0,0)}
+$('showAnswers').onclick=()=>{const a=$('answers');if(!a.dataset.ready){a.innerHTML=qs.map((q,i)=>{const s=document.querySelector(`input[name="q${i}"]:checked`),v=s?+s.value:-1;return `<div class="q"><p>${i+1}. ${esc(q.q)}</p><p class="correct">Correct answer: ${String.fromCharCode(65+q.a)}. ${esc(q.o[q.a])}</p><p class="${v===q.a?'correct':'wrong'}">Your answer: ${v<0?'Not answered':String.fromCharCode(65+v)+'. '+esc(q.o[v])}</p><p class="small">${esc(q.e)}</p></div>`}).join('');a.dataset.ready='1'}a.classList.toggle('hidden')};
+</script></body></html>
